@@ -23,7 +23,11 @@ def make_public_task(task):
 @api.route('/tasks', methods=['GET'])
 @auth.login_required
 def get_tasks():
-    return jsonify([make_public_task(todo.as_json()) for todo in Todo.query.all()])
+    queries = []
+    done = request.args.get('done')
+    if done is not None:
+        queries.append(Todo.done == done)
+    return jsonify([make_public_task(todo.as_json()) for todo in Todo.query.filter(*queries)])
 
 @api.route('/tasks', methods=['POST'])
 @auth.login_required
