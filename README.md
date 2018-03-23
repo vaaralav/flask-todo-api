@@ -14,6 +14,7 @@ My take on learning some Python and Flask.
 	- [`GET /todo/api/tasks/:task_id`](#get-todoapitaskstaskid)
 	- [`PUT /todo/api/tasks/:task_id`](#put-todoapitaskstaskid)
 	- [`DELETE /todo/api/tasks/:task_id`](#delete-todoapitaskstaskid)
+	- [TODO! /todo/api/users endpoints!](#todo-todoapiusers-endpoints)
 	- [`GET /todo/api/health`](#get-todoapihealth)
 
 <!-- /TOC -->
@@ -79,28 +80,36 @@ Authorization: Basic <your_basic_authentication_token_here>
     "done": false,
     "id": 2,
     "title": "Learn Python",
-    "uri": "http://localhost:5000/todo/api/tasks/2"
+    "uri": "http://localhost:5000/todo/api/tasks/2",
+    "user": 3,
+    "user_uri": "http://localhost:5000/todo/api/users/3"
   },
   {
     "description": "Such wow",
     "done": false,
     "id": 3,
     "title": "Learn Python",
-    "uri": "http://localhost:5000/todo/api/tasks/3"
+    "uri": "http://localhost:5000/todo/api/tasks/3",
+    "user": 3,
+    "user_uri": "http://localhost:5000/todo/api/users/3"
   },
   {
     "description": "",
     "done": false,
     "id": 4,
     "title": "Buy stuff",
-    "uri": "http://localhost:5000/todo/api/tasks/4"
+    "uri": "http://localhost:5000/todo/api/tasks/4",
+    "user": 3,
+    "user_uri": "http://localhost:5000/todo/api/users/3"
   },
   {
     "description": "",
     "done": false,
     "id": 5,
     "title": "Buy stuff",
-    "uri": "http://localhost:5000/todo/api/tasks/5"
+    "uri": "http://localhost:5000/todo/api/tasks/5",
+    "user": 3,
+    "user_uri": "http://localhost:5000/todo/api/users/3"
   }
 ]
 ```
@@ -123,7 +132,8 @@ Postman-Token: ef8b66ff-9ff1-4e11-a4e2-bda067aaa39e
 
 {
     "title": "Be awesome",
-    "description": ""
+    "description": "",
+		"user": 3
 }
 ```
 
@@ -135,7 +145,9 @@ Postman-Token: ef8b66ff-9ff1-4e11-a4e2-bda067aaa39e
   "done": false,
   "id": 8,
   "title": "Be awesome",
-  "uri": "http://localhost:5000/todo/api/tasks/8"
+  "uri": "http://localhost:5000/todo/api/tasks/8",
+  "user": 3,
+  "user_uri": "http://localhost:5000/todo/api/users/3"
 }
 ```
 
@@ -162,7 +174,9 @@ Authorization: Basic <your_basic_authentication_token_here>
   "done": true,
   "id": 7,
   "title": "Foobar",
-  "uri": "http://localhost:5000/todo/api/tasks/7"
+  "uri": "http://localhost:5000/todo/api/tasks/7",
+  "user": 3,
+  "user_uri": "http://localhost:5000/todo/api/users/3"
 }
 ```
 
@@ -195,7 +209,9 @@ Postman-Token: ab6d272a-95d1-4ffe-ba22-2f4b820a6a5d
   "done": false,
   "id": 7,
   "title": "Foobar",
-  "uri": "http://localhost:5000/todo/api/tasks/7"
+  "uri": "http://localhost:5000/todo/api/tasks/7",
+  "user": 3,
+  "user_uri": "http://localhost:5000/todo/api/users/3"
 }
 ```
 
@@ -225,6 +241,8 @@ Authorization: Basic <your_basic_authentication_token_here>
   "result": true
 }
 ```
+
+### TODO! /todo/api/users endpoints!
 
 ### `GET /todo/api/health`
 
