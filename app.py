@@ -13,10 +13,10 @@ with app.app_context():
     db.create_all()
 
     @app.errorhandler(404)
-    def not_found():
+    def not_found(err):
         return make_response(jsonify({'error': 'Not Found'}), 404)
     @app.errorhandler(400)
-    def invalid_request():
+    def invalid_request(err):
         return make_response(jsonify({'error': 'Bad Request'}), 400)
 
 
